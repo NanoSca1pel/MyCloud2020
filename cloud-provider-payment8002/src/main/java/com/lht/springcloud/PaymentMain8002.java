@@ -2,6 +2,7 @@ package com.lht.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @SpringBootApplication
 @EnableEurekaClient //申明注册为往注册中心注册的服务
 //@MapperScan("com.lht.springcloud.mapper")
+@EnableDiscoveryClient //开启服务发现功能
 public class PaymentMain8002 {
 
     public static void main(String[] args){
