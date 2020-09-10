@@ -14,17 +14,17 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @RequestMapping("/consumer")
 @Slf4j
-public class ZkOrderController {
+public class ConsulOrderController {
 
     //public static final String PAYMENT_URL = "http://localhost:8001";
     //地址中微服务的名称无论大小写都不影响使用
-    public static final String PAYMENT_URL = "http://zk-cloud-provider-payment";
+    public static final String PAYMENT_URL = "http://consul-cloud-provider-payment";
 
     @Autowired
     private RestTemplate restTemplate;
 
-    @GetMapping("/paymentzk")
+    @GetMapping("/paymentconsul")
     public String paymentInfo() {
-        return restTemplate.getForObject(PAYMENT_URL + "/payment/zk", String.class);
+        return restTemplate.getForObject(PAYMENT_URL + "/payment/consul", String.class);
     }
 }

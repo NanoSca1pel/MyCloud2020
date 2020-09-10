@@ -1,0 +1,16 @@
+#80标识注册到consul服务器的支付服务消费者端口号
+server:
+  port: 80
+
+#服务别名----注册consul到注册中心名称
+spring:
+  application:
+    name: consul-cloud-consumer-order
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        #hostname: 127.0.0.1
+        service-name: ${spring.application.name}
+
